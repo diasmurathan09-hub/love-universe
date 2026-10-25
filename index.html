@@ -81,14 +81,14 @@
             box-shadow: 0 0 45px rgba(255, 77, 109, 1);
         }
 
-        /* Модальное окно (Открытка + Галерея в оригинальном качестве) */
+        /* Модальное окно (Открытка + Галерея в идеальном качестве) */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0, 0, 0, 0.88);
             backdrop-filter: blur(12px);
             z-index: 100;
             display: flex;
@@ -108,7 +108,7 @@
         .card-container {
             background: rgba(255, 255, 255, 0.96);
             width: 100%;
-            max-width: 700px;
+            max-width: 720px;
             max-height: 90vh;
             overflow-y: auto;
             border-radius: 35px;
@@ -150,7 +150,7 @@
             white-space: pre-line;
         }
 
-        /* Сетка для фотографий в максимальном качестве */
+        /* Галерея оригинальных фото без сжатия */
         .photo-grid {
             display: flex;
             flex-direction: column;
@@ -161,11 +161,11 @@
         .photo-item {
             width: 100%;
             height: auto;
-            max-height: 550px;
+            max-height: 600px;
             object-fit: contain;
             background-color: #0b0c10;
             border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
             transition: transform 0.3s ease;
         }
 
@@ -193,7 +193,7 @@
         <button class="open-btn" onclick="openCard()">Открыть моё письмо ✨</button>
     </div>
 
-    <!-- Модальная открытка с фотографиями в высоком качестве -->
+    <!-- Открытка с локальными оригинальными фото -->
     <div class="modal-overlay" id="modal">
         <div class="card-container">
             <button class="close-btn" onclick="closeCard()">&times;</button>
@@ -209,13 +209,13 @@
 
             <h3 style="color: #ff4d6d; margin-bottom: 15px; font-size: 1.3rem;">Наши моменты 📸</h3>
             
-            <!-- Фото в полном качестве -->
+            <!-- Локальные фото в 100% качестве -->
             <div class="photo-grid">
-                <img src="https://i.ibb.co.com/N6XW1DD5/photo.jpg" alt="Фото 1" class="photo-item">
-                <img src="https://i.ibb.co.com/wNh1Qgmk/photo.jpg" alt="Фото 2" class="photo-item">
-                <img src="https://i.ibb.co.com/mVc5Z3FM/photo.jpg" alt="Фото 3" class="photo-item">
-                <img src="https://i.ibb.co.com/RZqgbSX/photo.jpg" alt="Фото 4" class="photo-item">
-                <img src="https://i.ibb.co.com/Kj1ZJDw0/photo.jpg" alt="Фото 5" class="photo-item">
+                <img src="photo1.jpg" alt="Фото 1" class="photo-item">
+                <img src="photo2.jpg" alt="Фото 2" class="photo-item">
+                <img src="photo3.jpg" alt="Фото 3" class="photo-item">
+                <img src="photo4.jpg" alt="Фото 4" class="photo-item">
+                <img src="photo5.jpg" alt="Фото 5" class="photo-item">
             </div>
         </div>
     </div>
@@ -270,8 +270,8 @@
         const group = new THREE.Group();
         scene.add(group);
 
-        const totalWords = 380; // Огромное количество слов для максимального масштаба
-        const radius = 220;     // Широкий охват галактики
+        const totalWords = 380;
+        const radius = 220;
 
         for (let i = 0; i < totalWords; i++) {
             const word = loveWords[i % loveWords.length];
